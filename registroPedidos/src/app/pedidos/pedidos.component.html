@@ -1,0 +1,98 @@
+
+
+
+
+
+
+
+
+
+
+<div class="text-center page-header">
+  <h2 class="mt-4 mb-4">registro Pedidos desde Front con AngularX</h2>
+</div>
+	<!-- Barra divisora  -->
+  <div class="navbar navbar-expand-sm bg-light navbar-light"></div>
+
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 offset-sm-0 col-md-8 offset-md-2">
+          <br>
+          <div class="card card-primary">
+              <div class="card-header">Registra tus Pedidos</div>
+
+              <div class="card-body">
+                    <!--<div class="row" id="formulario">
+                    <div class="row col-sm-12 offset-sm-0 col-md-8 offset-md-2"> -->
+                      <div class="form-group">
+                          <div class="col-sm-12 col-md-2 col-xs-12 mt-1">
+                              <label for="pedido">NroPedido</label>
+                          </div>
+                          <div class="col-sm-12 col-md-10  col-xs-12 mt-1">
+                              <input id="pedido" class="form-control" [(ngModel)]="cpedido.pedido"/>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-sm-12" for="categoria">Seleccion la Categoria</label>
+                        <div class="col-sm-12 col-md-10  col-xs-12 mt-1">
+                          <select   class="form-control" [(ngModel)]="cpedido.categoria" placeholder="Seleccione la Categoria">
+                            <option *ngFor ="let ct of categorias" value={{ct.categoria}}>{{ct.categoria}}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-12 col-md-2 col-xs-12 mt-1">
+                            <label for="cantidad">Cantidad</label>
+                          </div>
+                          <div class="col-sm-12 col-md-10  col-xs-12 mt-1">
+                              <input type="number" id="cantidad" class="form-control" [(ngModel)]="cpedido.cantidad"/>
+                          </div>
+                    </div>
+                  <hr>
+                      <br>
+                      <div class="nav-item ml-auto text-right">
+                        <input type="button" value="Registro" (click)="guardarPedido()" class="btn mr-1 btn-success">
+                        <input type="button" value="Vaciar" (click)="vaciarFormulario()" class="btn mr-1 btn-warning">
+                     </div>
+              </div>
+            </div>
+            <br>
+
+          <div *ngIf="mpedidos">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Pedido</th>
+                        <th>Categoria</th>
+                        <th>Cantidad</th>
+
+
+                    </tr>
+                </thead>
+
+                <tbody id="tablaPedidos">
+                    <!--Capturamos con la funcion Sellecionar el pedidos e  dado cuando se solicite que qureremos montar sobre el formulario
+                      <tr *ngFor="let d of pedidos" (click)="seleccionarDiscos(d.id)">-->
+                    <tr *ngFor="let d of pedidos">
+                        <td>
+                          {{d.pedido}}
+                        </td>
+                        <td>
+                          {{d.categoria}}
+                        </td>
+                        <td>
+                          {{d.cantidad}}
+                        </td>
+
+                      </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+  </div>
+</div>
+<footer class="fixed-bottom">
+	<div class="card-footer text-center">
+		<span class="text-muted">Maxiste Ledezma - FrontAngular/BackJava Mayo. 2021</span>
+    </div>
+</footer>

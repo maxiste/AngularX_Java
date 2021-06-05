@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<h1>Esto es Una prueba con Angular  para Java</h1>
+<b>Introduce Numero 1: </b> <input type="number" [(ngModel)]="numero1">
+<b>Introduce Numero 2: </b> <input type="number" [(ngModel)]="numero2">
+<br>
+<hr>
+<div class="text-center">
+  <button class="btn btn-success lm-1" (click)="sumar()">Sumar</button>
+  <button class="btn btn-warning" (click)="multiplicar()">Multiplicar</button>
+</div>
+<br>
+<span>Resultado Obtenido-----> {{resultado}}</span>
