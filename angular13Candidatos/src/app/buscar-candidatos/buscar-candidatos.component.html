@@ -1,0 +1,50 @@
+<div class="text-center page-header">
+  <h2 class="mt-4 mb-4">El Candidato</h2>
+</div>
+<!-- Barra divisora  -->
+<div class="navbar navbar-expand-sm bg-dark navbar-dark"></div>
+
+<div class="container-fluid">
+<div class="row">
+      <div class="col-sm-12 offset-sm-0 col-md-8 offset-md-2">
+      <br>
+    <div class="text-center">
+
+             <label class="control-label col-xs-2" for="email">Introduzca el Email</label>
+                  <div class="col-xs-10">
+                      <input id="email" type="text" name="email" class="form-control" placeholder="Introduzca el Email" required="required" [(ngModel)]="email"/>
+                  </div>
+             <input type="button" value="VerResultado" (click)="buscarCandidato()" class="btn mr-1 btn-primary">
+
+    </div>
+
+    <hr>
+     <div class="nav-item ml-auto text-right">
+             <a href="toInicio"> <span class="fas fa-sign-in-alt"></span> </a>Menu
+      </div>
+      <br>
+       <hr>
+
+       <div *ngIf="mostrarC">
+        <h1>Candidato Encontrado</h1>
+         <table  class="table table-striped table-hover" border ="1" >
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Correo</th>
+              <th>Puesto</th>
+
+            </tr>
+            <tr >
+
+              <td>{{resultadoC.nombre}}</td>
+              <td>{{resultadoC.edad}}</td>
+              <td>{{resultadoC.email}}</td>
+              <td>{{resultadoC.puesto}}</td>
+            </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+</div>

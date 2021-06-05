@@ -1,0 +1,49 @@
+<div class="container-fluid text-center">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark container border-top border-success">
+    <a class="navbar-brand" href="#">
+      <span class="fab fa-earlybirds" ></span>
+    <!--  <span class="fab fa-gruntfab fa-grunt" ></span> -->
+
+      AppFrontAngular
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" routerLink="/toAltaC">Incluir Candidatos <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" (click)="listarCandidatos()" href="#">Mostrar Candidatos</a>
+            <a class="nav-item nav-link" routerLink="/toBuscarE">Buscar x Email</a>
+          </div>
+    </div>
+  </nav>
+
+ <hr>
+
+
+  <div *ngIf="mCandidato">
+        <h1>Listado de Candidatos</h1>
+        <table  class="table table-striped table-hover"  >
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Correo</th>
+              <th>Puesto</th>
+              <th>Accion</th>
+
+            </tr>
+            <tr *ngFor ="let cn of listaC">
+
+              <td>{{cn.nombre}}</td>
+              <td>{{cn.edad}}</td>
+              <td>{{cn.email}}</td>
+              <td>{{cn.puesto}}</td>
+              <td><button class="btn btn-sm  btn-danger ml-1 mr-1 fas fa-trash-alt" (click)="deleteCandidato(cn.idCandidato)"> <!-- aqui es la variable de la clase y no de la BD -->
+
+            </button>
+      </td>
+            </tr>
+      </table>
+  </div>
+</div>
